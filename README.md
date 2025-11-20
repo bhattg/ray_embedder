@@ -1,6 +1,6 @@
-# 🌩️ Scalable Ray Data Embedding Pipeline for **Qwen3-Embedding-4B**
+# 🌩️ Scalable Ray Data Embedding Pipeline**
 
-This repository provides a **fully scalable**, **GPU-accelerated**, **Ray Data–based** embedding pipeline for generating embeddings using **Qwen3-Embedding-4B** (or any Qwen3 embedding model).
+This repository provides a **fully scalable**, **GPU-accelerated**, **Ray Data–based** embedding pipeline for generating embeddings.
 
 The pipeline is designed for **large-scale text embedding generation** on multi-CPU and multi-GPU nodes.
 
@@ -16,7 +16,6 @@ The pipeline is designed for **large-scale text embedding generation** on multi-
   - `prompt_id`
   - `text`
   - `embedding` (float32 list)
-- Compatible with **Qwen/Qwen3-Embedding-0.6B**, **1.5B**, **4B**, etc.
 
 ---
 
