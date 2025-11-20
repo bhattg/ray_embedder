@@ -87,7 +87,7 @@ class EmbeddingStage:
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         self.model = AutoModel.from_pretrained(
             model_name,
-            dtype=torch.float16,
+            torch_dtype=torch_dtype,
             trust_remote_code=False,
             low_cpu_mem_usage=True,
             # attn_implementation="flash_attention_2",
@@ -167,7 +167,7 @@ def main(parquet_path, output_dir, model_name="Qwen/Qwen3-Embedding-0.6B",
         fn_constructor_args=(local_path,),
         batch_size=512,
         batch_format="pandas",
-        concurrency=(1, num_cpus),
+        concurrency=(1, 2*num_cpus),
     ).map_batches(
         EmbeddingStage,
         fn_constructor_args=(local_path, "float16"),
