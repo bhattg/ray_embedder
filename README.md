@@ -1,4 +1,4 @@
-# 🌩️ Scalable Ray Data Embedding Pipeline**
+# 🌩️ Scalable Ray Data Embedding Pipeline
 
 This repository provides a **fully scalable**, **GPU-accelerated**, **Ray Data–based** embedding pipeline for generating embeddings.
 
@@ -135,3 +135,8 @@ embedding: list<float>
 - Streaming parquet writing → avoids memory blowup  
 - Ray Data executor keeps memory bounded for large corpora
 - If one has multiple compute nodes for GPU, change the concurrency argument according to [this](https://docs.ray.io/en/latest/train/user-guides/using-gpus.html).
+
+--- 
+
+## Acknowledgements
+- Gemini and some procrastination :p 
