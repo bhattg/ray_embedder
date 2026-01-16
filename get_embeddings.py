@@ -14,12 +14,12 @@ Fully scalable Ray Data embedding pipeline for Qwen3-Embedding-4B.
 import os
 from ray.data import DataContext
 
-scratch = "/data/gbhatt2/HF_HOME/"
+# scratch = "/data/gbhatt2/HF_HOME/"
 os.environ["HF_HOME"] = scratch
 # os.environ["TRANSFORMERS_CACHE"] = f"{scratch}/transformers"
-os.environ["HF_DATASETS_CACHE"] = f"{scratch}/datasets"
-os.environ["HF_METRICS_CACHE"] = f"{scratch}/metrics"
-os.environ["HF_MODULES_CACHE"] = f"{scratch}/modules"
+# os.environ["HF_DATASETS_CACHE"] = f"{scratch}/datasets"
+# os.environ["HF_METRICS_CACHE"] = f"{scratch}/metrics"
+# os.environ["HF_MODULES_CACHE"] = f"{scratch}/modules"
 import time
 import numpy as np
 import pyarrow as pa
