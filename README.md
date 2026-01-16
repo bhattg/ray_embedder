@@ -15,7 +15,7 @@ The pipeline is designed for **large-scale text embedding generation** on multi-
 - Saves output parquet containing:
   - `prompt_id`
   - `text`
-  - `embedding` (float32 list)
+  - `embedding`
 
 ---
 
@@ -133,46 +133,5 @@ embedding: list<float>
 - Fast tokenizer batches (size 512) → **very high CPU throughput**  
 - Embeddings computed in **fp16** → **2–4× GPU speedup**  
 - Streaming parquet writing → avoids memory blowup  
-- Ray Data executor keeps memory bounded for large corpora  
-
----
-
-## 🔧 Environment Variables
-
-Caches stored in:
-
-```
-/data/<user>/HF_HOME/
-```
-
-Modify:
-
-```python
-scratch = "/data/gbhatt2/HF_HOME/"
-os.environ["HF_HOME"] = scratch
-```
-
----
-
-## ❗ Troubleshooting
-
-### **Model not found**
-Pre-download:
-
-```bash
-huggingface-cli download Qwen/Qwen3-Embedding-4B --local-dir ./model
-```
-
-Or run in offline mode:
-
-```bash
-export TRANSFORMERS_OFFLINE=1
-```
-
----
-
-## 🙌 Acknowledgements
-
-- **Ray** team  
-- **Alibaba Qwen** team  
-- **HuggingFace** team  
+- Ray Data executor keeps memory bounded for large corpora
+- If one has multiple compute nodes for GPU, change the concurrency argument according to [this](https://docs.ray.io/en/latest/train/user-guides/using-gpus.html).
