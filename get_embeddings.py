@@ -15,7 +15,7 @@ import os
 from ray.data import DataContext
 
 # scratch = "/data/gbhatt2/HF_HOME/"
-os.environ["HF_HOME"] = scratch
+# os.environ["HF_HOME"] = scratch
 # os.environ["TRANSFORMERS_CACHE"] = f"{scratch}/transformers"
 # os.environ["HF_DATASETS_CACHE"] = f"{scratch}/datasets"
 # os.environ["HF_METRICS_CACHE"] = f"{scratch}/metrics"
